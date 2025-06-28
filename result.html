@@ -1,0 +1,81 @@
+<!-- templates/result.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Prediction Result</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #f1f8e9, #e0f7fa);
+            color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .result-box {
+            background-color: #ffffff;
+            padding: 40px 50px;
+            border-radius: 16px;
+            box-shadow: 0 12px 28px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            max-width: 600px;
+            width: 90%;
+            transition: transform 0.3s ease;
+            border: 1px solid #e0e0e0;
+        }
+
+        .result-box:hover {
+            transform: scale(1.01);
+        }
+
+        .result-box h2 {
+            font-size: 26px;
+            color: #2c3e50;
+            margin-bottom: 20px;
+        }
+
+        .result-box p {
+            font-size: 18px;
+            margin: 10px 0 20px;
+            color: #444;
+        }
+
+        .result-box img {
+            max-width: 100%;
+            border-radius: 12px;
+            margin-top: 20px;
+            box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+        }
+
+        .result-box a {
+            display: inline-block;
+            margin-top: 30px;
+            padding: 12px 28px;
+            background: linear-gradient(to right, #66bb6a, #43a047);
+            color: white;
+            font-size: 16px;
+            text-decoration: none;
+            border-radius: 8px;
+            transition: background 0.3s, transform 0.2s;
+        }
+
+        .result-box a:hover {
+            background: linear-gradient(to right, #43a047, #2e7d32);
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body>
+    <div class="result-box">
+        <h2>Prediction Result</h2>
+        <p><strong>Predicted Class:</strong> {{ class_label }}</p>
+        <img src="data:image/png;base64,{{ img_data }}" alt="Uploaded Image">
+        <br>
+        <a href="{{ url_for('upload_file') }}">Predict Another Image</a>
+    </div>
+</body>
+</html>
