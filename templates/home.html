@@ -1,0 +1,94 @@
+<!-- templates/home.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Blood Cell Classification</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #e0f7fa, #f1f8e9);
+            color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .upload-box {
+            background: #ffffff;
+            border-radius: 16px;
+            box-shadow: 0 12px 28px rgba(0, 0, 0, 0.1);
+            padding: 40px 50px;
+            text-align: center;
+            transition: transform 0.3s ease;
+            border: 1px solid #e0e0e0;
+        }
+
+        .upload-box:hover {
+            transform: scale(1.015);
+        }
+
+        .upload-box h2 {
+            margin-bottom: 25px;
+            font-size: 24px;
+            color: #2c3e50;
+        }
+
+        input[type="file"] {
+            background: #f9f9f9;
+            color: #333;
+            border: 1px solid #ccc;
+            padding: 10px;
+            border-radius: 8px;
+            margin: 20px 0;
+            cursor: pointer;
+            transition: border-color 0.2s ease;
+        }
+
+        input[type="file"]:hover {
+            border-color: #66bb6a;
+        }
+
+        input[type="file"]::-webkit-file-upload-button {
+            background-color: #66bb6a;
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        input[type="file"]::-webkit-file-upload-button:hover {
+            background-color: #43a047;
+        }
+
+        button {
+            background: linear-gradient(to right, #42a5f5, #478ed1);
+            color: #fff;
+            padding: 12px 30px;
+            font-size: 16px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background 0.3s, transform 0.2s;
+        }
+
+        button:hover {
+            background: linear-gradient(to right, #1e88e5, #1565c0);
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body>
+    <div class="upload-box">
+        <h2>Upload a Blood Cell Image</h2>
+        <form method="POST" enctype="multipart/form-data">
+            <input type="file" name="file" accept="image/*" required><br>
+            <button type="submit">Upload & Predict</button>
+        </form>
+    </div>
+</body>
+</html>
